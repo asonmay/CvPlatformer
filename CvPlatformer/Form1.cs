@@ -23,7 +23,6 @@ namespace CvPlatformer
         Vector2 playerPosition;
         Vector2 speed;
         Size playerSize;
-        Mat saveFrame = new Mat();
         bool isUpdateing = true;
         VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint();
         public Form1()
@@ -36,7 +35,7 @@ namespace CvPlatformer
             if(isUpdateing)
             {
                 currentFrame = capture.QueryFrame();
-                pictureBox3.Image = capture.QueryFrame().ToBitmap();
+                CameraWindow.Image = capture.QueryFrame().ToBitmap();
                 perspectiveTransform();
                 trackPlatforms();
             }
@@ -45,7 +44,6 @@ namespace CvPlatformer
                 player();
             }
             draw();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -81,7 +79,7 @@ namespace CvPlatformer
             CvInvoke.GaussianBlur(imageClone, imageClone, new Size(7, 7), 0);
             CvInvoke.CvtColor(imageClone, imageClone, Emgu.CV.CvEnum.ColorConversion.Bgr2Hsv);
             CvInvoke.InRange(imageClone, (ScalarArray)new MCvScalar(75, 0, 127), (ScalarArray)new MCvScalar(179, 65, 255), imageClone);
-            pictureBox4.Image = imageClone.ToBitmap();
+            InRangeWindow.Image = imageClone.ToBitmap();
             contours = new VectorOfVectorOfPoint();
             Mat heirachy = new Mat();
             CvInvoke.FindContours(imageClone, contours, heirachy, Emgu.CV.CvEnum.RetrType.External, Emgu.CV.CvEnum.ChainApproxMethod.ChainApproxNone);
@@ -105,7 +103,7 @@ namespace CvPlatformer
 
             CvInvoke.ApproxPolyDP(contours[index], contours[index], 0.02 * CvInvoke.ArcLength(contours[index], true), true);
             CvInvoke.DrawContours(image, contours, -1, new MCvScalar(255, 0, 0), 4);
-            pictureBox5.Image = image.ToBitmap();
+            ContourWindow.Image = image.ToBitmap();
             PointF[] dest = new PointF[]
             {
                 new PointF(0,0),
@@ -116,13 +114,13 @@ namespace CvPlatformer
 
             CvInvoke.WarpPerspective(output, output, CvInvoke.GetPerspectiveTransform(new PointF[] { contours[index][0], contours[index][1], contours[index][2], contours[index][3] }, dest), output.Size);
             CvInvoke.Flip(output, output, Emgu.CV.CvEnum.FlipType.Horizontal);
-            pictureBox2.Image = output.ToBitmap();
-            pictureBox2.Tag = output;
+            TransformWindow.Image = output.ToBitmap();
+            TransformWindow.Tag = output;
         }
 
         private void trackPlatforms()
         {
-            Mat image = (Mat)pictureBox2.Tag;
+            Mat image = (Mat)TransformWindow.Tag;
             Mat imageClone = image.Clone();
             CvInvoke.GaussianBlur(imageClone, imageClone, new Size(5, 5), 0);
             CvInvoke.CvtColor(imageClone, imageClone, Emgu.CV.CvEnum.ColorConversion.Bgr2Hsv);
@@ -138,18 +136,17 @@ namespace CvPlatformer
                     platforms.Add(CvInvoke.BoundingRectangle(contours[i]));                  
                 }
             }
-            
         }
         private void draw()
         {
-            Mat image = (Mat)pictureBox2.Tag;
+            Mat image = (Mat)TransformWindow.Tag;
             Mat output = image.Clone();
             for(int i = 0; i < platforms.Count; i++)
             {
                 CvInvoke.Rectangle(output, CvInvoke.BoundingRectangle(contours[i]), new MCvScalar(0, 255, 255), -1);
             }
             CvInvoke.Rectangle(output, new Rectangle((int)playerPosition.X, (int)playerPosition.Y, playerSize.Width, playerSize.Height), new MCvScalar(255, 0, 0), -1);
-            pictureBox1.Image = output.ToBitmap();
+            GameWindow.Image = output.ToBitmap();
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -173,28 +170,16 @@ namespace CvPlatformer
             speed.X = 0;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             isUpdateing = false;
-            saveFrame = currentFrame;
-
-            pictureBox1.Focus();
+            GameWindow.Focus();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             isUpdateing = true;
-            pictureBox1.Focus();
+            GameWindow.Focus();
         }
     }
 }

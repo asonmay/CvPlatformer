@@ -30,88 +30,91 @@ namespace CvPlatformer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.GamePanel = new System.Windows.Forms.Panel();
+            this.GameWindow = new System.Windows.Forms.PictureBox();
+            this.DebugPanel = new System.Windows.Forms.Panel();
+            this.InRangeWindow = new System.Windows.Forms.PictureBox();
+            this.ContourWindow = new System.Windows.Forms.PictureBox();
+            this.CameraWindow = new System.Windows.Forms.PictureBox();
+            this.TransformWindow = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
+            this.GamePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GameWindow)).BeginInit();
+            this.DebugPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InRangeWindow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContourWindow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CameraWindow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransformWindow)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // GamePanel
             // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(13, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(557, 315);
-            this.panel1.TabIndex = 0;
+            this.GamePanel.BackColor = System.Drawing.SystemColors.Control;
+            this.GamePanel.Controls.Add(this.GameWindow);
+            this.GamePanel.Location = new System.Drawing.Point(13, 13);
+            this.GamePanel.Name = "GamePanel";
+            this.GamePanel.Size = new System.Drawing.Size(557, 315);
+            this.GamePanel.TabIndex = 0;
             // 
-            // pictureBox1
+            // GameWindow
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(551, 309);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.GameWindow.BackColor = System.Drawing.SystemColors.Control;
+            this.GameWindow.Location = new System.Drawing.Point(3, 3);
+            this.GameWindow.Name = "GameWindow";
+            this.GameWindow.Size = new System.Drawing.Size(551, 309);
+            this.GameWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GameWindow.TabIndex = 0;
+            this.GameWindow.TabStop = false;
             // 
-            // panel2
+            // DebugPanel
             // 
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Location = new System.Drawing.Point(13, 358);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(557, 306);
-            this.panel2.TabIndex = 1;
+            this.DebugPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.DebugPanel.Controls.Add(this.InRangeWindow);
+            this.DebugPanel.Controls.Add(this.ContourWindow);
+            this.DebugPanel.Controls.Add(this.CameraWindow);
+            this.DebugPanel.Controls.Add(this.TransformWindow);
+            this.DebugPanel.Location = new System.Drawing.Point(13, 358);
+            this.DebugPanel.Name = "DebugPanel";
+            this.DebugPanel.Size = new System.Drawing.Size(557, 306);
+            this.DebugPanel.TabIndex = 1;
             // 
-            // pictureBox4
+            // InRangeWindow
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(277, 155);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(269, 144);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
+            this.InRangeWindow.Location = new System.Drawing.Point(277, 155);
+            this.InRangeWindow.Name = "InRangeWindow";
+            this.InRangeWindow.Size = new System.Drawing.Size(269, 144);
+            this.InRangeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.InRangeWindow.TabIndex = 3;
+            this.InRangeWindow.TabStop = false;
             // 
-            // pictureBox5
+            // ContourWindow
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(3, 155);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(268, 144);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
+            this.ContourWindow.Location = new System.Drawing.Point(3, 155);
+            this.ContourWindow.Name = "ContourWindow";
+            this.ContourWindow.Size = new System.Drawing.Size(268, 144);
+            this.ContourWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ContourWindow.TabIndex = 2;
+            this.ContourWindow.TabStop = false;
             // 
-            // pictureBox3
+            // CameraWindow
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(277, 5);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(269, 144);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
+            this.CameraWindow.Location = new System.Drawing.Point(277, 5);
+            this.CameraWindow.Name = "CameraWindow";
+            this.CameraWindow.Size = new System.Drawing.Size(269, 144);
+            this.CameraWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CameraWindow.TabIndex = 1;
+            this.CameraWindow.TabStop = false;
             // 
-            // pictureBox2
+            // TransformWindow
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(268, 144);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.TransformWindow.Location = new System.Drawing.Point(3, 3);
+            this.TransformWindow.Name = "TransformWindow";
+            this.TransformWindow.Size = new System.Drawing.Size(268, 144);
+            this.TransformWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.TransformWindow.TabIndex = 0;
+            this.TransformWindow.TabStop = false;
             // 
             // timer1
             // 
@@ -119,66 +122,67 @@ namespace CvPlatformer
             this.timer1.Interval = 32;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button1
+            // SaveButton
             // 
-            this.button1.Location = new System.Drawing.Point(16, 332);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.TabStop = false;
-            this.button1.Text = "save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.SaveButton.Location = new System.Drawing.Point(16, 332);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.TabIndex = 2;
+            this.SaveButton.TabStop = false;
+            this.SaveButton.Text = "save";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
+            // UpdateButton
             // 
-            this.button2.Location = new System.Drawing.Point(97, 332);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.TabStop = false;
-            this.button2.Text = "update";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.UpdateButton.Location = new System.Drawing.Point(97, 332);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(75, 23);
+            this.UpdateButton.TabIndex = 3;
+            this.UpdateButton.TabStop = false;
+            this.UpdateButton.Text = "update";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(578, 676);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.UpdateButton);
+            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.DebugPanel);
+            this.Controls.Add(this.GamePanel);
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "   ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.GamePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GameWindow)).EndInit();
+            this.DebugPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.InRangeWindow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ContourWindow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CameraWindow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TransformWindow)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel GamePanel;
+        private System.Windows.Forms.PictureBox GameWindow;
+        private System.Windows.Forms.Panel DebugPanel;
+        private System.Windows.Forms.PictureBox CameraWindow;
+        private System.Windows.Forms.PictureBox TransformWindow;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox InRangeWindow;
+        private System.Windows.Forms.PictureBox ContourWindow;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button UpdateButton;
     }
 }
 
